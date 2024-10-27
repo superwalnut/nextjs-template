@@ -59,10 +59,11 @@ export default function HeroComponent() {
                 </div>
               </div>
               <div className="place-items-end">
-                <Image src="https://avatars.githubusercontent.com/u/25170186?v=4" alt="Kevin Wang" className="h-80 w-80 rounded-full" />
+                <div className="h-80 w-80 rounded-full bg-neutral-100 shadow-xl">
+                  <Image src="/static/profile-icon.png" width="320" height="320" alt="Kevin Wang" className="h-80 w-80 rounded-full" />
+                </div>
               </div>
           </div>
-              
           </div>
           <div
             aria-hidden="true"
