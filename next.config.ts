@@ -8,7 +8,7 @@ const nextConfig: NextConfig = {
     domains: ["tailwindui.com"]
   },
   env: {
-    USER_ID: process.env.PROJECT_NAME,
+    PROJECT_NAME: process.env.PROJECT_NAME,
   },
 };
 
