@@ -20,35 +20,15 @@ jobs:
         with:
             node-version: "20"
 
-      - name: Install Dependencies
-        run: npm i npx
-
-      - name: Check project existence
-        id: check_files
-        uses: andstor/file-existence-action@v1
-        with:
-          files: "${{vars.PROJECT_NAME}}/package.json"
-
-      - name: Create project
-        if: steps.check_files.outputs.files_exists == 'false'
-        run: npx create-next-app@latest ${{vars.PROJECT_NAME}} --ts --use-npm --tailwind --eslint --app --src-dir
-
-      # Commit all changed files back to the repository
-      - uses: stefanzweifel/git-auto-commit-action@v5
-
       - name: Install Vercel CLI
-        working-directory: ${{vars.PROJECT_NAME}}
         run: npm install --global vercel@latest
 
       - name: Pull Vercel Environment Information
-        working-directory: ${{vars.PROJECT_NAME}}
         run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
 
       - name: Build Project Artifacts
-        working-directory: ${{vars.PROJECT_NAME}}
         run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
 
       - name: Deploy Project Artifacts to Vercel
-        working-directory: ${{vars.PROJECT_NAME}}
         run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}        
     
