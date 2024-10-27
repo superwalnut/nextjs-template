@@ -1,6 +1,7 @@
 'use client'
 import { EnvelopeIcon, PhoneIcon, MapPinIcon } from '@heroicons/react/24/outline'
 import HeroHeader from './partials/hero-header';
+import Image from 'next/image';
 
 export default function HeroComponent() {
   
@@ -58,7 +59,7 @@ export default function HeroComponent() {
                 </div>
               </div>
               <div className="place-items-end">
-                <img src="https://avatars.githubusercontent.com/u/25170186?v=4" alt="Kevin Wang" className="h-80 w-80 rounded-full" />
+                <Image src="https://avatars.githubusercontent.com/u/25170186?v=4" alt="Kevin Wang" className="h-80 w-80 rounded-full" />
               </div>
           </div>
               

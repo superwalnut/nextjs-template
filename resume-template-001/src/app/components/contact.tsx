@@ -38,7 +38,7 @@ export default function Contact() {
       <div className="mx-auto max-w-2xl text-center">
       <h2 className="text-5xl font-semibold tracking-tight sm:text-7xl">Contact Me</h2>
       <p className="mt-8 text-pretty text-lg font-medium sm:text-xl/8">
-        Get in touch for inquiries or collaboration opportunities - I'm here to help!
+        Get in touch for inquiries or collaboration opportunities - I&apos;m here to help!
       </p>
       </div>
       <form action="#" method="POST" className="mx-auto mt-16 max-w-xl sm:mt-20">
@@ -173,7 +173,7 @@ export default function Contact() {
             type="submit"
             className="block w-full rounded-md bg-indigo-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
           >
-            Let's talk
+            Let&apos;s talk
           </button>
         </div>
       </form>
