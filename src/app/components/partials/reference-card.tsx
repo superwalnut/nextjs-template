@@ -3,7 +3,7 @@ import { UserCircleIcon } from "@heroicons/react/24/outline";
 
 const ReferenceCard = (person: Reference) => {
     return (
-        <div className="mr-16 bg-neutral-100 p-8 rounded-lg">
+        <div className="mx-8 my-4 bg-neutral-100 p-8 rounded-lg">
             <div className="flex items-center gap-x-6">
             <UserCircleIcon className="w-16 h-16 inline-block align-text-bottom font-light" />
             <div>

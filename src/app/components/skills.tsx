@@ -20,7 +20,6 @@ const skills = [
   { "id": 19, "name": "Linux" },
   { "id": 20, "name": "Machine Learning" }
 ]
-
   
   export default function Skills() {
     return (
@@ -34,12 +33,11 @@ const skills = [
             </div>
             <div className="mt-10 text-center">
             {skills.map((item) => (
-                <span key={item.id} className="text-xl inline-flex items-center rounded-md bg-blue-50 px-2 py-1 text-xs font-medium text-blue-700 ring-1 ring-inset ring-blue-700/10 mr-5 mb-5">
+                <span key={item.id} className="text-xl inline-flex items-center rounded-md bg-blue-50 px-2 py-1 font-medium text-blue-700 ring-1 ring-inset ring-blue-700/10 mr-5 mb-5">
                   {item.name}
                 </span>
             ))}
-            </div>
-            
+            </div>            
         </div>
       </div>
     )
