@@ -4,7 +4,8 @@ import HeroHeader from './partials/hero-header';
 import Image from 'next/image';
 
 export default function HeroComponent() {
-  
+   const userId = process.env.PROJECT_NAME??'';
+
     return (
       <div className="bg-white h-[100vh]">
         <HeroHeader />
@@ -25,7 +26,7 @@ export default function HeroComponent() {
           <div className="grid grid-cols-2 gap-4">
               <div>
                 <h1 className="text-balance text-5xl font-semibold tracking-tight text-gray-900 sm:text-7xl">
-                    Kevin Wang
+                    Kevin Wang {userId}
                 </h1>
                 <h2 className="text-balance text-4xl font-medium tracking-tight text-gray-900 sm:text-4xl mt-10">Software Engineer</h2>
                 <div className="mt-10">
