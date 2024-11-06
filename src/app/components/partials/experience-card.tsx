@@ -1,28 +1,33 @@
-import { AtSymbolIcon, CalendarDaysIcon } from "@heroicons/react/24/outline"
-import { SparklesIcon, BookmarkIcon } from "@heroicons/react/24/solid"
-import React from 'react'
-import { Experience } from "../interfaces/experience"
+'use client'
+import { AtSymbolIcon, CalendarDaysIcon } from "@heroicons/react/24/outline";
+//import { SparklesIcon, BookmarkIcon } from "@heroicons/react/24/solid"
+import React from 'react';
+import { ResumeExperience } from "../interfaces/resume";
+import { format } from 'date-fns';
 
-const ExperienceCard = (product: Experience) => {
+const ExperienceCard = (exp: ResumeExperience) => {
     return (
         <div className="mx-auto px-4 pb-10 pt-10 sm:px-6 lg:max-w-7xl lg:gap-x-8 lg:px-8 lg:pb-10 lg:pt-10">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-3xl">
-            {product.role} <span className="text-gray-600">
+            {exp.title} <span className="text-gray-600">
               <AtSymbolIcon className="w-6 h-6 inline-block mr-2" />
-              {product.company}</span>
+              {exp.company}</span>
           </h2>
           <h3 className="text-2xl font-normal tracking-tight text-blue-700 sm:text-2xl mt-3">
             <CalendarDaysIcon className="w-6 h-6 inline-block align-text-bottom mr-2" />
-            {product.fromDate} to {product.toDate}
+            {
+              exp.startDate != null && exp.endDate != null &&
+              <span>{format(exp.startDate!, 'MM/yyyy')} to {format(exp.endDate!, 'MM/yyyy')}</span>
+            }
           </h3>
 
-          { product.summary && 
+          { exp.description && 
             <div className="mt-6 space-y-6">
-                <p className="text-base text-gray-900">{product.summary}</p>
+                <p className="text-base text-gray-900">{exp.description}</p>
             </div>
           }
           
-          {
+          {/* {
             product.responsibilities && product.responsibilities.length > 0 && 
             <div className="mt-6">
               <h3 className="text-base font-bold text-gray-900">
@@ -60,7 +65,7 @@ const ExperienceCard = (product: Experience) => {
                 </ul>
               </div>
           </div>
-        }
+        } */}
           
         </div>
     )

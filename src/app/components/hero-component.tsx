@@ -2,10 +2,9 @@
 import { EnvelopeIcon, PhoneIcon, MapPinIcon } from '@heroicons/react/24/outline'
 import HeroHeader from './partials/hero-header';
 import Image from 'next/image';
+import { Resume } from './interfaces/resume';
 
-export default function HeroComponent() {
-   const userId = process.env.PROJECT_NAME??'';
-
+export default function HeroComponent(resume: Resume) {
     return (
       <div className="bg-white h-[100vh]">
         <HeroHeader />
@@ -26,20 +25,21 @@ export default function HeroComponent() {
           <div className="grid grid-cols-2 gap-4">
               <div>
                 <h1 className="text-balance text-5xl font-semibold tracking-tight text-gray-900 sm:text-7xl">
-                    Kevin Wang {userId}
+                    {resume.firstName} {resume.lastName}
                 </h1>
-                <h2 className="text-balance text-4xl font-medium tracking-tight text-gray-900 sm:text-4xl mt-10">Software Engineer</h2>
-                <div className="mt-10">
+                <h2 className="text-balance text-4xl font-medium tracking-tight text-gray-900 sm:text-4xl mt-10 mb-10">{resume.profession}</h2>
+                
+                <div className="mt-5">
                     <EnvelopeIcon aria-hidden="true" className="h-5 w-5 inline-block text-gray-500 mr-2 font-bold align-text-bottom" />
-                    <span className="text-lg">kevin.wangwei@gmail.com</span>
+                    <span className="text-lg">{resume.emails}</span>
                 </div>
                 <div className="mt-5">
                     <PhoneIcon aria-hidden="true" className="h-5 w-5 inline-block text-gray-500 mr-2 font-bold align-text-bottom" />
-                    <span className="text-lg">0433499901</span>
-                </div>
+                    <span className="text-lg">{resume.phones}</span>
+                </div>                
                 <div className="mt-5">
                     <MapPinIcon aria-hidden="true" className="h-5 w-5 inline-block text-gray-500 mr-2 font-bold align-text-bottom" />
-                    <span className="text-lg">7 Smalls creek way, Beaumont Hills, NSW, 2155</span>
+                    <span className="text-lg">{resume.address}</span>
                 </div>
                 <div className="mt-10">
                     <a href="https://github.com/superwalnut" target="_blank" className="mr-5 inline-block">

@@ -1,6 +1,9 @@
+'use client'
 import { ArrowDownTrayIcon } from '@heroicons/react/24/outline'
+import { Resume } from './interfaces/resume'
+import Link from 'next/link'
   
-  export default function AboutComponent() {
+  export default function AboutComponent(resume:Resume) {
     return (
       <div className="relative isolate overflow-hidden bg-gray-900 py-24 sm:py-32" id="AboutMe">
         <div
@@ -20,15 +23,17 @@ import { ArrowDownTrayIcon } from '@heroicons/react/24/outline'
           <div className="mx-auto max-w-7xl lg:mx-0 text-center">
             <h2 className="text-5xl font-semibold tracking-tight text-white sm:text-7xl">About Me</h2>
             <p className="mt-8 text-pretty text-lg font-medium text-gray-300 sm:text-xl/8">
-            I am a highly skilled senior software developer with team leading experiences. With 20 years of experience in the IT industry working with the latest technologies. I possess specialised knowledge of enterprise level web applications and have experience across the full stack development and agile methodologies.
+              {resume.summary}
             </p>
           </div>
           
           <div className="mx-auto mt-10 max-w-7xl lg:mx-0 lg:max-w-none text-center mt-10 pt-10">
-            <button className="bg-blue-500 hover:bg-blue-700 text-white font-medium py-4 px-10 inline-flex items-center text-3xl rounded-full">                
+            <Link className="bg-blue-500 hover:bg-blue-700 text-white font-medium py-4 px-10 inline-flex items-center text-3xl rounded-full" href={{
+                pathname: resume.resumeFileUrl,
+              }} target='_blank'>
                 Download CV
                 <ArrowDownTrayIcon className="w-4 h-4 ml-2" />
-            </button>
+            </Link>
           </div>
         </div>
       </div>

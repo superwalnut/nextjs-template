@@ -1,22 +1,8 @@
+'use client'
 import ReferenceCard from "./partials/reference-card"
-import { Reference } from "./interfaces/reference";
+import { Resume } from "./interfaces/resume";
 
-const people = [
-    {
-      firstName: 'Leslie',
-      lastName: 'McMillan',
-      role: 'Co-Founder / CEO',
-      phone: '555-555-5555',
-    },
-    {
-      firstName: 'Sam',
-      lastName: 'Altman',
-      role: 'Co-Founder / CEO',
-      phone: '555-555-4444',
-    },
-  ] as Reference[];
-  
-  export default function ReferenceComponent() {
+export default function ReferenceComponent(resume:Resume) {
     return (
     <div className="bg-white py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -25,8 +11,8 @@ const people = [
           </div>
 
           <div className="flex flex-wrap justify-center mt-10">
-              {people.map((person) => (
-                <ReferenceCard key={person.firstName + person.lastName} {...person} />
+              {resume.references.map((person, index) => (
+                <ReferenceCard key={"ref" + index} {...person} />
               ))}
           </div>
       </div>
