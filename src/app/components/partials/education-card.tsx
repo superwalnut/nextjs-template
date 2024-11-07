@@ -1,28 +1,27 @@
 'use client'
 import { ResumeEducation } from "../interfaces/resume"
-import { BuildingLibraryIcon, CalendarDaysIcon } from "@heroicons/react/24/outline";
+import { CalendarDaysIcon } from "@heroicons/react/24/outline";
 
 const EducationCard = (education: ResumeEducation) => {
     return (
-        <div className="p-4 max-w-md">
-        <div className="flex rounded-lg h-full bg-sky-100 p-6 flex-col shadow-lg">
-            <div className="text-right mb-3">
-                <CalendarDaysIcon className="w-6 h-6 inline-block align-text-bottom mr-2" />
-                <span className="text-gray-600">{education.startYear} to {education.endYear}</span>
-            </div>
-            <div className="flex items-center mb-3">
-                <div className="w-8 h-8 mr-3 inline-flex items-center justify-center rounded-full dark:bg-indigo-500 bg-indigo-500 text-white flex-shrink-0">
-                    <BuildingLibraryIcon className="w-5 h-5" />
+        <div className="card w-full lg:max-w-full ">
+            <div className="w-full lg:max-w-full lg:flex rounded-xl shadow-lg">
+                <div className="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" 
+                    style={{ backgroundImage: "url('/static/book-computer.jpg')" }} 
+                    title="Educations">
                 </div>
-                <h2 className="text-lg font-medium">{education.issuingOrganization}</h2>
-            </div>
-            <div className="flex flex-col justify-between flex-grow">
-                <div className="mt-3">
-                    <span className="text-gray-600"> {education.description}</span>
+                <div className="w-full border border-t-1 border-l-0 border-r-1 border-b-0 border-gray-100 rounded-b lg:rounded-b-none lg:rounded-r p-4 justify-between leading-normal">
+                    <div className="mb-8">
+                    <p className="text-sm text-gray-600 flex items-center mb-6">
+                        <CalendarDaysIcon className="w-6 h-6 inline-block align-text-bottom mr-2" />
+                        <span className="text-gray-600">{education.startYear} to {education.endYear}</span>
+                        </p>
+                    <div className="text-gray-900 font-bold text-xl mb-4">{education.issuingOrganization}</div>
+                        <p className="text-gray-700 text-base min-h-16">{education.description}</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
     )
 }
 
