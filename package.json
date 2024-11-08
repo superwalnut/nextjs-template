@@ -11,6 +11,7 @@
   "dependencies": {
     "@headlessui/react": "^2.1.8",
     "@heroicons/react": "^2.1.5",
+    "@react-google-maps/api": "^2.20.3",
     "cross-env": "^7.0.3",
     "date-fns": "^4.1.0",
     "next": "15.0.1",

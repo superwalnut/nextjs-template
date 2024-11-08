@@ -4,7 +4,7 @@ import { ResumeReference } from "../interfaces/resume";
 
 const ReferenceCard = (person: ResumeReference) => {
     return (
-        <div className="mx-8 my-4 bg-neutral-100 p-8 rounded-lg max-w-lg w-80">
+        <div className="card mx-8 my-4 p-8 rounded-lg max-w-lg w-80 shadow-lg">
             <div className="flex items-center gap-x-6">
                 <UserCircleIcon className="w-16 h-16 inline-block align-text-bottom font-light" />
                 <div>

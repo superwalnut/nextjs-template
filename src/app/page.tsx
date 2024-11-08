@@ -46,7 +46,7 @@ export default async function Home() {
         resume.references!=null && resume.references.length > 0 &&
         <ReferenceComponent {...resume}></ReferenceComponent>
       }
-      <ContactComponent></ContactComponent>
+      <ContactComponent {...resume}></ContactComponent>
       <ScrollToTopButton></ScrollToTopButton>
     </div>
   );
