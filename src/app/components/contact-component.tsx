@@ -1,13 +1,10 @@
 'use client'
 
-import { useState } from 'react'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
-import { Field, Label, Switch } from '@headlessui/react'
 import ContactMap from './partials/contact-map'
 import { Resume } from './interfaces/resume'
 
 export default function Contact(resume:Resume) {
-  const [agreed, setAgreed] = useState(false)
 
   return (
     <div className="isolate bg-white px-6 py-24 sm:py-32 lg:px-8" id="Contact">
